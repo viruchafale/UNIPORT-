@@ -1,0 +1,90 @@
+web3-terminal/
+│
+├── frontend/                     # React/Next.js UI
+│   ├── public/                   # Static files, logos, icons
+│   ├── src/
+│   │   ├── components/           # Reusable UI components
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Sidebar.jsx
+│   │   │   ├── PriceCard.jsx
+│   │   │   ├── WalletConnectButton.jsx
+│   │   │
+│   │   ├── pages/                # Next.js pages OR React routes
+│   │   │   ├── index.jsx         # Dashboard
+│   │   │   ├── portfolio.jsx
+│   │   │   ├── wallet.jsx
+│   │   │   ├── settings.jsx
+│   │   │
+│   │   ├── hooks/                # Custom React hooks
+│   │   │   ├── useFetch.js       # Fetch API wrapper
+│   │   │   ├── useWallet.js      # Ethers.js wallet hook
+│   │   │
+│   │   ├── context/              # Global state (user, wallet, theme)
+│   │   │   ├── UserContext.jsx
+│   │   │   ├── WalletContext.jsx
+│   │   │
+│   │   ├── utils/                # Helpers (format numbers, charts)
+│   │   │   ├── format.js
+│   │   │   ├── constants.js
+│   │   │
+│   │   ├── styles/               # Tailwind/custom CSS
+│   │   │   ├── globals.css
+│   │   │
+│   │   ├── services/             # API calls to backend
+│   │   │   ├── priceService.js
+│   │   │   ├── portfolioService.js
+│   │   │   ├── walletService.js
+│   │   │
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │
+│   ├── package.json
+│   ├── tailwind.config.js
+│
+│
+├── backend/                      # Node.js + Express backend
+│   ├── src/
+│   │   ├── config/               # Env, DB, API config
+│   │   │   ├── db.js
+│   │   │   ├── env.js
+│   │   │
+│   │   ├── controllers/          # Logic for each route
+│   │   │   ├── priceController.js
+│   │   │   ├── portfolioController.js
+│   │   │   ├── walletController.js
+│   │   │
+│   │   ├── routes/               # API endpoints
+│   │   │   ├── priceRoutes.js    # /api/prices
+│   │   │   ├── portfolioRoutes.js # /api/portfolio
+│   │   │   ├── walletRoutes.js    # /api/wallet
+│   │   │
+│   │   ├── services/             # External API logic (Binance, Moralis)
+│   │   │   ├── binanceService.js
+│   │   │   ├── coingeckoService.js
+│   │   │   ├── walletService.js
+│   │   │
+│   │   ├── models/               # MongoDB Schemas
+│   │   │   ├── User.js
+│   │   │   ├── Portfolio.js
+│   │   │
+│   │   ├── middlewares/
+│   │   │   ├── authMiddleware.js
+│   │   │
+│   │   ├── utils/                # Helpers
+│   │   │   ├── jwt.js
+│   │   │   ├── encrypt.js
+│   │   │
+│   │   ├── app.js
+│   │   ├── server.js
+│   │
+│   ├── package.json
+│
+│
+├── docs/                         # Project docs for college
+│   ├── proposal.pdf
+│   ├── architecture.png
+│   ├── readme.md
+│
+├── .gitignore
+├── README.md
+└── package.json                 # Root (optional for workspace)
