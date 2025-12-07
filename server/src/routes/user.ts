@@ -1,1 +1,3 @@
-// router.get("/profile",authMiddleware,authController.profile)
+import express from 'express';
+const router = express.Router();
+export default router;
