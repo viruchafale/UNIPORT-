@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/select";
 import { Plus, Pencil, Trash2, Wallet as WalletIcon, Search, Filter, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect, useMemo } from "react";
-import { api } from "@/services/api";
+import { api, API_URL } from "@/services/api";
 import { toast } from "sonner";
 
 interface Wallet {
@@ -124,7 +124,7 @@ export default function WalletsPage() {
     if (!selectedWallet) return;
 
     try {
-      await fetch(`http://localhost:5001/api/wallets/${selectedWallet._id}`, {
+      await fetch(`${API_URL}/wallets/${selectedWallet._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -144,7 +144,7 @@ export default function WalletsPage() {
     if (!confirm("Are you sure you want to delete this wallet?")) return;
 
     try {
-      await fetch(`http://localhost:5001/api/wallets/${id}`, {
+      await fetch(`${API_URL}/wallets/${id}`, {
         method: "DELETE",
       });
       toast.success("Wallet deleted successfully!");

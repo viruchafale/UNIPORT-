@@ -22,7 +22,7 @@ import {
 } from "@/components/ui/select";
 import { Plus, Pencil, Trash2, ArrowRightLeft, Search, Filter, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect, useMemo } from "react";
-import { api } from "@/services/api";
+import { api, API_URL } from "@/services/api";
 import { toast } from "sonner";
 
 interface Transaction {
@@ -133,7 +133,7 @@ export default function TransactionsPage() {
     if (!selectedTransaction) return;
 
     try {
-      await fetch(`http://localhost:5001/api/transactions/${selectedTransaction._id}`, {
+      await fetch(`${API_URL}/transactions/${selectedTransaction._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -156,7 +156,7 @@ export default function TransactionsPage() {
     if (!confirm("Are you sure you want to delete this transaction?")) return;
 
     try {
-      await fetch(`http://localhost:5001/api/transactions/${id}`, {
+      await fetch(`${API_URL}/transactions/${id}`, {
         method: "DELETE",
       });
       toast.success("Transaction deleted successfully!");
